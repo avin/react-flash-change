@@ -1,0 +1,4 @@
+dist/*
+demo/*
+package-lock.json
+yarn.lock

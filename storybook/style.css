@@ -1,0 +1,39 @@
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    padding: 10px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.greenFlashContainer {
+    background-color: transparent;
+    transition: background-color 500ms;
+}
+
+.greenFlashContainer.active {
+    background-color: #eafe4e;
+}
+
+.shadowFlashContainer {
+    text-shadow: none;
+    transition: text-shadow 500ms;
+}
+
+.shadowFlashContainer.active {
+    text-shadow: 0 0 3px black;
+}
+
+.rotateFlashContainer {
+    transform: rotate(-360deg);
+}
+
+.rotateFlashContainer.active {
+    transform: rotate(0deg);
+    transition: transform 500ms;
+}
