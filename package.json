@@ -51,11 +51,16 @@
         "test:watch": "react-scripts test --env=jsdom"
     },
     "lint-staged": {
-        "{website,src}/**/*.{js,json,css}": [
+        "**/*.{js,json,css,md}": [
             "prettier --write",
             "git add"
         ],
         "**/*.js": "eslint --max-warnings 0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
     },
     "dependencies": {
         "@babel/runtime": "^7.0.0",
@@ -100,6 +105,7 @@
         "eslint-plugin-standard": "^3.0.1",
         "flow-bin": "^0.80.0",
         "gh-pages": "^1.1.0",
+        "husky": "^1.1.2",
         "lint-staged": "^7.0.5",
         "prettier": "^1.12.1",
         "react": "^16.5.1",
