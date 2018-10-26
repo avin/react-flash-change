@@ -37,7 +37,7 @@
         "build:demo": "build-storybook -o demo",
         "build:flow": "cpr flow-template dist/index.cjs.js.flow && cpr flow-template dist/index.esm.js.flow",
         "build:source": "rollup -c",
-        "deploy": "rimraf demo && npm run build:demo && gh-pages -d demo -r https://github.com/avin/react-size-me",
+        "deploy": "rimraf demo && npm run build:demo && gh-pages -d demo -r https://github.com/avin/react-flash-change",
         "flow": "flow check --max-warnings=0 src && flow check website",
         "linc": "lint-staged",
         "lint": "eslint '**/*.js'",
