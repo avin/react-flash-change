@@ -28,12 +28,3 @@ td {
 .shadowFlashContainer.active {
     text-shadow: 0 0 3px black;
 }
-
-.rotateFlashContainer {
-    transform: rotate(-360deg);
-}
-
-.rotateFlashContainer.active {
-    transform: rotate(0deg);
-    transition: transform 500ms;
-}

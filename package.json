@@ -59,7 +59,8 @@
     },
     "dependencies": {
         "@babel/runtime": "^7.0.0",
-        "classnames": "^2.2.6"
+        "classnames": "^2.2.6",
+        "react-lifecycles-compat": "^3.0.4"
     },
     "peerDependencies": {
         "react": "^15.0.0 || ^16.0.0",
@@ -82,6 +83,8 @@
         "babel-plugin-annotate-pure-calls": "^0.3.0",
         "cpr": "^3.0.1",
         "cross-env": "^5.1.4",
+        "enzyme": "^3.7.0",
+        "enzyme-adapter-react-16": "^1.6.0",
         "eslint": "^4.19.1",
         "eslint-config-prettier": "^2.9.0",
         "eslint-config-react-app": "^2.1.0",

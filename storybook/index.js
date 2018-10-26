@@ -1,9 +1,6 @@
-//@flow
-
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import classNames from 'classnames';
 import FlashChange from '../src';
 
 function randomNumber() {
@@ -69,7 +66,11 @@ export default class Demo extends React.Component {
                 break;
             }
             case 'RotateChange': {
-                flashChangeProps.className = 'rotateFlashContainer';
+                flashChangeProps.style = { transform: 'rotate(-360deg)' };
+                flashChangeProps.flashStyle = {
+                    transform: 'rotate(0deg)',
+                    transition: 'transform 500ms',
+                };
                 break;
             }
             default:

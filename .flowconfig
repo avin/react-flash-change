@@ -8,5 +8,6 @@
 
 [options]
 include_warnings=true
+jsx.react=true
 
 [strict]
