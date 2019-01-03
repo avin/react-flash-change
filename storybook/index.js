@@ -63,6 +63,7 @@ export default class Demo extends React.Component {
             }
             case 'TextShadow': {
                 flashChangeProps.className = 'shadowFlashContainer';
+                flashChangeProps.outerElementType = 'span';
                 break;
             }
             case 'RotateChange': {

@@ -31,6 +31,11 @@ type Props = {
     className?: string,
 
     /**
+     * Tag name passed to document.createElement to create the outer container element.
+     */
+    outerElementType?: React$ElementType,
+
+    /**
      * Optional inline style
      */
     style?: Object,
@@ -45,6 +50,7 @@ class FlashChange extends React.Component<Props, State> {
         flashDuration: 200,
         flashStyle: {},
         flashClassName: undefined,
+        outerElementType: 'div',
         compare: (prevProps, newProps) => {
             return prevProps.value !== newProps.value;
         },
@@ -97,7 +103,7 @@ class FlashChange extends React.Component<Props, State> {
     }
 
     render() {
-        const { style, className, children, flashClassName, flashStyle } = this.props;
+        const { style, className, children, flashClassName, flashStyle, outerElementType } = this.props;
         const { activeFlash } = this.state;
 
         let styleProp = { ...style };
@@ -105,15 +111,17 @@ class FlashChange extends React.Component<Props, State> {
             styleProp = { ...styleProp, ...flashStyle };
         }
 
+        const OuterElement = outerElementType;
+
         return (
-            <div
+            <OuterElement
                 {...{
                     style: styleProp,
                     className: classNames(className, { [flashClassName]: activeFlash }),
                 }}
             >
                 {children}
-            </div>
+            </OuterElement>
         );
     }
 }
