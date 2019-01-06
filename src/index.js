@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import classNames from 'classnames';
+import classNames from 'clsx';
 import { polyfill } from 'react-lifecycles-compat';
 
 type Props = {
@@ -83,15 +83,13 @@ class FlashChange extends React.Component<Props, State> {
         const { compare } = nextProps;
         const result = compare(prevState.props, nextProps);
         if (result) {
-            return { activeFlash: true, props: nextProps };
+            return { activeFlash: true, compareResult: result, props: nextProps };
         }
         return { props: nextProps };
     }
 
     componentDidUpdate(prevProps: Object, prevState: Object) {
-        const { compare } = this.props;
-        const result = compare(prevState.props, this.state.props);
-        if (result) {
+        if (this.state.activeFlash) {
             this._activateTimer();
         }
     }
@@ -104,7 +102,7 @@ class FlashChange extends React.Component<Props, State> {
 
     render() {
         const { style, className, children, flashClassName, flashStyle, outerElementType } = this.props;
-        const { activeFlash } = this.state;
+        const { activeFlash, compareResult } = this.state;
 
         let styleProp = { ...style };
         if (activeFlash) {
@@ -117,7 +115,11 @@ class FlashChange extends React.Component<Props, State> {
             <OuterElement
                 {...{
                     style: styleProp,
-                    className: classNames(className, { [flashClassName]: activeFlash }),
+                    className: classNames(
+                        className,
+                        { [flashClassName]: activeFlash },
+                        { [compareResult]: activeFlash }
+                    ),
                 }}
             >
                 {children}

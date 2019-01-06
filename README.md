@@ -43,15 +43,15 @@ const Component = ({ value }) => {
 
 ### Props
 
-| Property         | Type              | Required? | Description                                                                                                                                                |
-| :--------------- | :---------------- | :-------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| compare          | Function          |           | Function to compare props before and after update to resolve to flash or not. Function params: `(prevProps, nextProps)`. Default it comapres `props.value` |
-| flashDuration    | Number            |           | Duration of "flash"-effect in ms. Default: 200ms                                                                                                           |
-| flashClassName   | String            |           | Flash-effect className                                                                                                                                     |
-| flashStyle       | Object            |           | Flash-effect style object                                                                                                                                  |
-| className        | string            |           | Optional custom CSS class name                                                                                                                             |
-| style            | Object            |           | Optional inline style                                                                                                                                      |
-| outerElementType | React$ElementType |           | Tag name passed to document.createElement to create the outer container element. Default: `div`                                                            |
+| Property         | Type              | Required? | Description                                                                                                                                                                                                |
+| :--------------- | :---------------- | :-------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| compare          | Function          |           | Function to compare props before and after update to resolve to flash or not. Function params: `(prevProps, nextProps)`. Default it compares `props.value`. If return string - it will be flash className. |
+| flashDuration    | Number            |           | Duration of "flash"-effect in ms. Default: 200ms                                                                                                                                                           |
+| flashClassName   | String            |           | Flash-effect className                                                                                                                                                                                     |
+| flashStyle       | Object            |           | Flash-effect style object                                                                                                                                                                                  |
+| className        | string            |           | Optional custom CSS class name                                                                                                                                                                             |
+| style            | Object            |           | Optional inline style                                                                                                                                                                                      |
+| outerElementType | React$ElementType |           | Tag name passed to document.createElement to create the outer container element. Default: `div`                                                                                                            |
 
 ## License
 

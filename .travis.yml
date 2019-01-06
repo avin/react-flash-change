@@ -10,6 +10,7 @@ before_script:
   - yarn
 
 script:
+  - yarn run test
   - yarn run build:demo
 
 deploy:
